@@ -2,9 +2,15 @@
   "name": "kvr_institute",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "cra-template": "1.2.0",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
@@ -14,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node connectDB/serverConnect.js",
+    "dev": "concurrently \"npm start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
@@ -33,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
